@@ -19,9 +19,7 @@ class LoadingViewController: UIViewController {
         super.viewDidLoad()
         
         // CALLING DESIGN FUNCTIONS
-        
-        // Small change :D
-        
+                
         self.view.basicBackgroundConfig(UIColor(hex: mainDark))
         circleView.viewController = self
         
