@@ -86,27 +86,26 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2OD-GL-JpT">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="87"/>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vJi-RI-Zd2" customClass="GameRateView" customModule="GameTeller" customModuleProvider="target">
-                                                    <rect key="frame" x="21" y="4" width="333" height="83"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tne-ic-x76" customClass="GameStatsView" customModule="GameTeller" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="87"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="vJi-RI-Zd2" firstAttribute="top" secondItem="vIX-zD-no8" secondAttribute="top" constant="4" id="DnG-TW-4Fi"/>
+                                                <constraint firstAttribute="bottom" secondItem="tne-ic-x76" secondAttribute="bottom" constant="12" id="0Ac-RH-9J7"/>
+                                                <constraint firstItem="tne-ic-x76" firstAttribute="leading" secondItem="vIX-zD-no8" secondAttribute="leading" id="3CR-1j-2I6"/>
                                                 <constraint firstAttribute="bottom" secondItem="2OD-GL-JpT" secondAttribute="bottom" constant="12" id="KJV-PH-ZKW"/>
-                                                <constraint firstAttribute="bottom" secondItem="vJi-RI-Zd2" secondAttribute="bottom" constant="12" id="RH8-xh-Q2m"/>
-                                                <constraint firstAttribute="trailing" secondItem="vJi-RI-Zd2" secondAttribute="trailing" constant="21" id="XdL-rB-fN2"/>
                                                 <constraint firstAttribute="trailing" secondItem="2OD-GL-JpT" secondAttribute="trailing" id="YKD-3k-yzI"/>
                                                 <constraint firstItem="2OD-GL-JpT" firstAttribute="leading" secondItem="vIX-zD-no8" secondAttribute="leading" id="YfQ-IU-2Hk"/>
-                                                <constraint firstItem="vJi-RI-Zd2" firstAttribute="leading" secondItem="vIX-zD-no8" secondAttribute="leading" constant="21" id="yuV-bc-W6l"/>
+                                                <constraint firstAttribute="trailing" secondItem="tne-ic-x76" secondAttribute="trailing" id="eqh-Q5-P66"/>
+                                                <constraint firstItem="tne-ic-x76" firstAttribute="top" secondItem="vIX-zD-no8" secondAttribute="top" id="tcr-qU-wSa"/>
                                                 <constraint firstItem="2OD-GL-JpT" firstAttribute="top" secondItem="vIX-zD-no8" secondAttribute="top" id="yya-OP-axe"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="gameBGImageView" destination="2OD-GL-JpT" id="Llu-rJ-UUu"/>
-                                            <outlet property="gameRateView" destination="vJi-RI-Zd2" id="VjP-vp-EX1"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

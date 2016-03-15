@@ -12,6 +12,7 @@
 		083D2B361C6B444D00A127EB /* HexConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D2B351C6B444D00A127EB /* HexConverter.swift */; };
 		083D2B381C6B44A300A127EB /* AnimationsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083D2B371C6B44A300A127EB /* AnimationsList.swift */; };
 		086D21E01C94EAD6009FE68C /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086D21DF1C94EAD6009FE68C /* CircleView.swift */; };
+		086EF62A1C98A72B00B5DC0D /* GameStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086EF6291C98A72B00B5DC0D /* GameStatsView.swift */; };
 		08724B731C6F38E20082C71C /* GradientConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08724B721C6F38E20082C71C /* GradientConfig.swift */; };
 		08724B751C6F3A900082C71C /* GameStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08724B741C6F3A900082C71C /* GameStockViewController.swift */; };
 		08B2FAD01C74D2310092CEBE /* ViewDesignFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2FACF1C74D2310092CEBE /* ViewDesignFunctions.swift */; };
@@ -52,6 +53,7 @@
 		083D2B351C6B444D00A127EB /* HexConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexConverter.swift; sourceTree = "<group>"; };
 		083D2B371C6B44A300A127EB /* AnimationsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationsList.swift; sourceTree = "<group>"; };
 		086D21DF1C94EAD6009FE68C /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		086EF6291C98A72B00B5DC0D /* GameStatsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameStatsView.swift; sourceTree = "<group>"; };
 		08724B721C6F38E20082C71C /* GradientConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientConfig.swift; sourceTree = "<group>"; };
 		08724B741C6F3A900082C71C /* GameStockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameStockViewController.swift; sourceTree = "<group>"; };
 		08B2FACF1C74D2310092CEBE /* ViewDesignFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewDesignFunctions.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				08B2FAD61C74DDC80092CEBE /* GameRateView.swift */,
+				086EF6291C98A72B00B5DC0D /* GameStatsView.swift */,
 				08D5B47C1C93971400C9B622 /* GTLabel.swift */,
 				086D21DF1C94EAD6009FE68C /* CircleView.swift */,
 			);
@@ -380,6 +383,7 @@
 			files = (
 				083D2B361C6B444D00A127EB /* HexConverter.swift in Sources */,
 				08D5B4791C937F7700C9B622 /* DataService.swift in Sources */,
+				086EF62A1C98A72B00B5DC0D /* GameStatsView.swift in Sources */,
 				08724B751C6F3A900082C71C /* GameStockViewController.swift in Sources */,
 				08D5B47D1C93971400C9B622 /* GTLabel.swift in Sources */,
 				08CDA5441C6B406B0079C93E /* AppDelegate.swift in Sources */,
