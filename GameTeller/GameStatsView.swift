@@ -10,7 +10,9 @@ import UIKit
 
 @IBDesignable class GameStatsView : UIView {
     
-    var gameTitleLabel : UILabel?
+    var gameTitleLabel : GTLabel?
+    
+    // MARK: - Inits
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,10 +28,18 @@ import UIKit
     
     // MARK: - Inspectable Properties
     
-    @IBInspectable var gameTLTextColor: UIColor? = UIColor.whiteColor() {
+    @IBInspectable var gameTLTextColor: UIColor = UIColor.whiteColor() {
         
         didSet {
             gameTitleLabel?.textColor = gameTLTextColor
+        }
+        
+    }
+    
+    @IBInspectable var gameTLBGColor: UIColor = UIColor(hex: titleBGGrey) {
+        
+        didSet {
+            gameTitleLabel?.backgroundColor = gameTLBGColor
         }
         
     }
@@ -41,15 +51,37 @@ import UIKit
     
     func setup() {
         
-        gameTitleLabel = UILabel()
+        // MARK: - UIComponents Design Setup
+        
+        gameTitleLabel = GTLabel()
+        
+        // Text
         gameTitleLabel?.text = "Test"
-        gameTitleLabel?.textColor = UIColor.blackColor()
+        gameTitleLabel?.textColor = gameTLTextColor
+        
+        // Background
+        gameTitleLabel?.backgroundColor = gameTLBGColor
+        
+        // Insets
+        gameTitleLabel?.leftInset = 5
+        gameTitleLabel?.rightInset = 5
+        
+        // MARK: - UIComponents Constraints Setup
+        
+        // Adding UIComponents to view
         
         gameTitleLabel?.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(gameTitleLabel!)
         
+        // GameTitleLabel
+        
         let titleXCenter = gameTitleLabel?.centerXAnchor.constraintEqualToAnchor(self.centerXAnchor)
         let titleYCenter = gameTitleLabel?.centerYAnchor.constraintEqualToAnchor(self.centerYAnchor)
+        
+        //
+        
+        
+        // Activating all constraints
         
         let allConstraints = [titleXCenter!, titleYCenter!]
         
