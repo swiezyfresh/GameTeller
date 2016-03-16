@@ -15,7 +15,7 @@ class GameStockViewController: UIViewController {
     var dataService = DataService()
     
     var gamesArray : [Game]?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 

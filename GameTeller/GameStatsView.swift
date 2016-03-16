@@ -11,6 +11,7 @@ import UIKit
 @IBDesignable class GameStatsView : UIView {
     
     var gameTitleLabel : GTLabel?
+    var gameLikesBar : UILabel?
     
     // MARK: - Inits
     
@@ -41,11 +42,20 @@ import UIKit
         didSet {
             gameTitleLabel?.backgroundColor = gameTLBGColor
         }
+
+    }
+    
+    @IBInspectable var gameLBTextColor: UIColor = UIColor.whiteColor() {
+    
+        didSet {
+            gameLikesBar?.textColor = gameLBTextColor
+        }
         
     }
     
     override func prepareForInterfaceBuilder() {
         gameTitleLabel?.text = "Test Game"
+        gameLikesBar?.text = "70%"
     }
     
     
@@ -54,36 +64,58 @@ import UIKit
         // MARK: - UIComponents Design Setup
         
         gameTitleLabel = GTLabel()
+        gameLikesBar = UILabel()
         
         // Text
         gameTitleLabel?.text = "Test"
         gameTitleLabel?.textColor = gameTLTextColor
         
+        gameLikesBar?.text = "70%"
+        gameLikesBar?.textColor = gameLBTextColor
+        
         // Background
         gameTitleLabel?.backgroundColor = gameTLBGColor
+        
+        gameLikesBar?.backgroundColor = UIColor(hex: lightGreen2)
         
         // Insets
         gameTitleLabel?.leftInset = 5
         gameTitleLabel?.rightInset = 5
         
+        
         // MARK: - UIComponents Constraints Setup
+        
         
         // Adding UIComponents to view
         
         gameTitleLabel?.translatesAutoresizingMaskIntoConstraints = false
+        gameLikesBar?.translatesAutoresizingMaskIntoConstraints = false
+        
         self.addSubview(gameTitleLabel!)
+        self.addSubview(gameLikesBar!)
+        
+        
+        // Adding constraints to UIComponents
         
         // GameTitleLabel
         
+        let titleTop = gameTitleLabel?.topAnchor.constraintEqualToAnchor(self.topAnchor, constant: 5)
         let titleXCenter = gameTitleLabel?.centerXAnchor.constraintEqualToAnchor(self.centerXAnchor)
-        let titleYCenter = gameTitleLabel?.centerYAnchor.constraintEqualToAnchor(self.centerYAnchor)
         
-        //
+        // GameLikesBar
         
+        let likesBarTop = gameLikesBar?.topAnchor.constraintEqualToAnchor(gameTitleLabel?.bottomAnchor, constant: 7)
+        let likesBarLeft = gameLikesBar?.leadingAnchor.constraintEqualToAnchor(self.leadingAnchor, constant: 0)
+        let likesBarBot = gameLikesBar?.bottomAnchor.constraintEqualToAnchor(self.bottomAnchor, constant: 0)
+
+        let likesBarWidthPercentages = self.bounds.size.width * 0.7
+        let likesBarWidth = gameLikesBar?.widthAnchor.constraintEqualToConstant(likesBarWidthPercentages)
+        
+        print(likesBarWidthPercentages)
         
         // Activating all constraints
         
-        let allConstraints = [titleXCenter!, titleYCenter!]
+        let allConstraints = [titleXCenter!, titleTop!, likesBarBot!, likesBarLeft!, likesBarTop!, likesBarWidth!]
         
         NSLayoutConstraint.activateConstraints(allConstraints)
         

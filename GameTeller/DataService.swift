@@ -16,8 +16,8 @@ class DataService {
     
         let game1 = Game()
         game1.name = "TestShooter"
-        game1.likesNumber = 213
-        game1.dislikesNumber = 71
+        game1.likesNumber = 70
+        game1.dislikesNumber = 30
         game1.topic = "Modern Warfare"
         game1.type = "FPS"
         game1.image = UIImage(named: "TestBGImage")

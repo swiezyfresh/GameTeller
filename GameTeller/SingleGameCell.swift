@@ -12,6 +12,6 @@ class SingleGameCell : UITableViewCell {
     
     @IBOutlet weak var gameBGImageView: UIImageView!
     @IBOutlet weak var gameRateView: GameRateView!
-
+    @IBOutlet weak var gameStatsView: GameStatsView!
     
 }
