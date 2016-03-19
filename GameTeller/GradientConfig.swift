@@ -27,8 +27,6 @@ extension UINavigationController {
         gradientLayer.locations = gradientLocations
         
         gradientLayer.frame = CGRect(x: layerFrame.origin.x, y: layerFrame.origin.y - statusBarHeight, width: layerFrame.size.width, height: layerFrame.size.height + statusBarHeight)
-
-//        self.navigationBar.layer.addSublayer(gradientLayer)
         
         UIGraphicsBeginImageContext(gradientLayer.bounds.size)
         gradientLayer.renderInContext(UIGraphicsGetCurrentContext()!)

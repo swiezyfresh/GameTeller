@@ -8,13 +8,24 @@
 
 import UIKit
 
-class TestVC: UIViewController {
-
-    @IBOutlet weak var testView: GameStatsView!
-
+class TestVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    override func viewDidAppear(animated: Bool) {
-        testView.animateBars()
+    @IBOutlet weak var tableView: UITableView!
+    
+    override func viewDidLoad() {
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
     }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let gameCell = tableView.dequeueReusableCellWithIdentifier("SingleGame") as! SingleGameCell
+        gameCell.gameStatsView.printSizes()
+        return gameCell
+    }
+    
     
 }

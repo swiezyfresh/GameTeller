@@ -9,33 +9,34 @@
 import UIKit
 
 class GameStockViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     var dataService = DataService()
     
     var gamesArray : [Game]?
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // CALLING DESIGN FUNCTIONS
         
+        // MARK: - Calling Design Function
         self.navigationController?.configureBarGradient()
         self.view.basicBackgroundConfig(UIColor(hex: mainDark))
         tableViewColor(UIColor.clearColor())
         
-        // Table view setup
+        // TableView setup
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
         // Access all games from database
         self.gamesArray = dataService.getAllGames()
     }
-
+    
 }
 
 extension GameStockViewController : UITableViewDataSource, UITableViewDelegate {
+    
+    // MARK: - TableView Initialize Functions
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return gamesArray!.count
@@ -47,17 +48,23 @@ extension GameStockViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        // Connecting Cell to SingleGameCell Class
+        
         let gameCell = tableView.dequeueReusableCellWithIdentifier("SingleGame") as! SingleGameCell
         let game = gamesArray![indexPath.row]
+        
         gameCell.gameRateView.game = game
+        gameCell.gameStatsView.game = game
         
         // Cell Layout
         gameCell.gameBGImageView.image = game.image
         
-        // Filling cell with data
-        print(__FUNCTION__)
+        // Animating Cell Bars
         gameCell.layoutIfNeeded()
         gameCell.gameStatsView.animateBars()
+        
+        //Printing Test Values
+        gameCell.gameStatsView.printSizes()
         
         return gameCell
     }

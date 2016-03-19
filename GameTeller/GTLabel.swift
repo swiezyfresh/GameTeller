@@ -11,6 +11,8 @@ import UIKit
 @IBDesignable
 class GTLabel : UILabel {
     
+    // MARK: - Properties for insets
+    
     @IBInspectable var topInset: CGFloat = 0.0 {
         didSet {
             invalidateIntrinsicContentSize()

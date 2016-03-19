@@ -15,6 +15,14 @@ import UIKit
     var gameDislikesBar : UILabel?
     var likesBarWidth : NSLayoutConstraint?
     var dislikesBarWidth : NSLayoutConstraint?
+    var game: Game? {
+        
+        didSet {
+            gameTitleLabel!.text = game?.name
+        }
+        
+    }
+    
     
     // MARK: - Inits
     
@@ -45,11 +53,11 @@ import UIKit
         didSet {
             gameTitleLabel?.backgroundColor = gameTLBGColor
         }
-
+        
     }
     
     @IBInspectable var gameLBTextColor: UIColor = UIColor.whiteColor() {
-    
+        
         didSet {
             gameLikesBar?.textColor = gameLBTextColor
         }
@@ -64,6 +72,8 @@ import UIKit
         
     }
     
+    // MARK: - Preparing UIComponents values for interface builder
+    
     override func prepareForInterfaceBuilder() {
         gameTitleLabel?.text = "Test Game"
         gameLikesBar?.text = "70%"
@@ -71,7 +81,7 @@ import UIKit
     
     
     func setup() {
-                
+        
         // MARK: - UIComponents Design Setup
         
         gameTitleLabel = GTLabel()
@@ -89,13 +99,10 @@ import UIKit
         
         // Background
         gameTitleLabel?.backgroundColor = gameTLBGColor
-        
         gameLikesBar?.backgroundColor = UIColor(hex: lightGreen2)
-        
         gameDislikesBar?.backgroundColor = UIColor(hex: dislikeRed)
         
         // Alignment
-        
         gameTitleLabel?.textAlignment = .Center
         gameLikesBar?.textAlignment = .Center
         gameDislikesBar?.textAlignment = .Center
@@ -137,16 +144,17 @@ import UIKit
         let dislikesBarTop = gameDislikesBar?.topAnchor.constraintEqualToAnchor(self.topAnchor, constant: 37)
         let dislikesBarRight = gameDislikesBar?.trailingAnchor.constraintEqualToAnchor(self.trailingAnchor, constant: 0)
         let dislikesBarBot = gameDislikesBar?.bottomAnchor.constraintEqualToAnchor(self.bottomAnchor, constant: 0)
-
+        
         
         #if !TARGET_INTERFACE_BUILDER
-//            
+            
+            
 //            let likesBarWidthPercentages = self.bounds.size.width * 0.7
 //            let likesBarWidth = gameLikesBar?.widthAnchor.constraintEqualToConstant(likesBarWidthPercentages)
 //            
 //            let dislikesBarWidthPercentages = self.bounds.size.width * 0.3
 //            let dislikesBarWidth = gameDislikesBar?.widthAnchor.constraintEqualToConstant(dislikesBarWidthPercentages)
-            
+//            
 //            print(self.bounds.size.width)
 //            print(UIScreen.mainScreen().bounds.size.width)
 //            print(likesBarWidthPercentages)
@@ -154,12 +162,14 @@ import UIKit
             
             likesBarWidth = gameLikesBar?.widthAnchor.constraintEqualToConstant(0)
             dislikesBarWidth = gameDislikesBar?.widthAnchor.constraintEqualToConstant(0)
-
+            
         #else
+            
+            // Declaring static widths of bars for interface builder
             
             likesBarWidth = gameLikesBar?.widthAnchor.constraintEqualToConstant(250)
             dislikesBarWidth = gameDislikesBar?.widthAnchor.constraintEqualToConstant(150)
-
+            
         #endif
         
         
@@ -174,7 +184,11 @@ import UIKit
         
     }
     
+    // MARK: - UIComponents Animation Functions
+    
     func animateBars() {
+        
+        // Declaring widths of bars for animation completed
         
         let likesBarWidthPercentages = self.bounds.size.width * 0.7
         likesBarWidth?.constant = likesBarWidthPercentages
@@ -182,11 +196,25 @@ import UIKit
         let dislikesBarWidthPercentages = self.bounds.size.width * 0.3
         dislikesBarWidth?.constant = dislikesBarWidthPercentages
         
+        // Animating the width
+        
         UIView.animateWithDuration(1.0, delay: 0.5, options: [], animations: {
             self.layoutIfNeeded()
             }, completion: nil)
+    }
+    
+    // MARK: - Printing screen sizes
+    
+    func printSizes() {
         
-        print("anything")
+        let likesBarWidthPercentages = self.bounds.size.width * 0.7
+        let dislikesBarWidthPercentages = self.bounds.size.width * 0.3
+        
+        print("Likes: \(likesBarWidthPercentages)")
+        print("Dislikes: \(dislikesBarWidthPercentages)")
+        print("Frame: \(self.frame.size.width)")
+        print("Bounds: \(self.bounds.size.width)")
+        print("Screen: \(UIScreen.mainScreen().bounds.size.width)")
     }
     
 }
