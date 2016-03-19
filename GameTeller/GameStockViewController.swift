@@ -55,6 +55,9 @@ extension GameStockViewController : UITableViewDataSource, UITableViewDelegate {
         gameCell.gameBGImageView.image = game.image
         
         // Filling cell with data
+        print(__FUNCTION__)
+        gameCell.layoutIfNeeded()
+        gameCell.gameStatsView.animateBars()
         
         return gameCell
     }

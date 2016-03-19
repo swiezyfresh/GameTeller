@@ -18,6 +18,7 @@
 		08B2FAD01C74D2310092CEBE /* ViewDesignFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2FACF1C74D2310092CEBE /* ViewDesignFunctions.swift */; };
 		08B2FAD41C74DCC50092CEBE /* SingleGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2FAD31C74DCC50092CEBE /* SingleGameCell.swift */; };
 		08B2FAD71C74DDC80092CEBE /* GameRateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2FAD61C74DDC80092CEBE /* GameRateView.swift */; };
+		08CDA4A71C9CD17800CF7006 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CDA4A61C9CD17800CF7006 /* TestVC.swift */; };
 		08CDA5441C6B406B0079C93E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08CDA5431C6B406B0079C93E /* AppDelegate.swift */; };
 		08CDA5491C6B406B0079C93E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08CDA5471C6B406B0079C93E /* Main.storyboard */; };
 		08CDA54C1C6B406B0079C93E /* GameTeller.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08CDA54A1C6B406B0079C93E /* GameTeller.xcdatamodeld */; };
@@ -59,6 +60,7 @@
 		08B2FACF1C74D2310092CEBE /* ViewDesignFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewDesignFunctions.swift; sourceTree = "<group>"; };
 		08B2FAD31C74DCC50092CEBE /* SingleGameCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleGameCell.swift; sourceTree = "<group>"; };
 		08B2FAD61C74DDC80092CEBE /* GameRateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRateView.swift; sourceTree = "<group>"; };
+		08CDA4A61C9CD17800CF7006 /* TestVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
 		08CDA5401C6B406B0079C93E /* GameTeller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameTeller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08CDA5431C6B406B0079C93E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08CDA5481C6B406B0079C93E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			children = (
 				080598DD1C6E1CE000FCEE60 /* LoadingViewController.swift */,
 				08724B741C6F3A900082C71C /* GameStockViewController.swift */,
+				08CDA4A61C9CD17800CF7006 /* TestVC.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				08B2FAD71C74DDC80092CEBE /* GameRateView.swift in Sources */,
 				080598D81C6E1A5300FCEE60 /* BasicColors.swift in Sources */,
 				086D21E01C94EAD6009FE68C /* CircleView.swift in Sources */,
+				08CDA4A71C9CD17800CF7006 /* TestVC.swift in Sources */,
 				08724B731C6F38E20082C71C /* GradientConfig.swift in Sources */,
 				08CDA54C1C6B406B0079C93E /* GameTeller.xcdatamodeld in Sources */,
 				08B2FAD01C74D2310092CEBE /* ViewDesignFunctions.swift in Sources */,
