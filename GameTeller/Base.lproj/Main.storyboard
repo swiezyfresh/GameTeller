@@ -47,12 +47,12 @@
                     <connections>
                         <outlet property="circleView" destination="RbB-jN-isR" id="kV1-CW-8rg"/>
                         <outlet property="welcomeLabel" destination="mD0-nq-ThS" id="LAB-MK-l2M"/>
-                        <segue destination="H6v-eu-Q7q" kind="presentation" identifier="toAppSegue" id="ygG-2G-COF"/>
+                        <segue destination="H6v-eu-Q7q" kind="presentation" identifier="toAppSegue" animates="NO" id="ygG-2G-COF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="188.5" y="511.5"/>
+            <point key="canvasLocation" x="188.5" y="506.5"/>
         </scene>
         <!--GameTeller-->
         <scene sceneID="sag-t0-ApY">
@@ -63,34 +63,34 @@
                         <viewControllerLayoutGuide type="bottom" id="mF2-xY-hSe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XLY-vE-T8j">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Rate Games" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Af-eT-yGy">
-                                <rect key="frame" x="222" y="104" width="158" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate Games" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Af-eT-yGy">
+                                <rect key="frame" x="109" y="104" width="158" height="36"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
                                 <color key="textColor" red="0.24705882370471954" green="0.65098041296005249" blue="0.24705882370471954" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="87" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EaR-6D-XQF">
-                                <rect key="frame" x="0.0" y="160" width="600" height="487"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="87" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EaR-6D-XQF">
+                                <rect key="frame" x="0.0" y="160" width="375" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SingleGame" rowHeight="99" id="fdj-xi-F9A" customClass="SingleGameCell" customModule="GameTeller" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="99"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="99"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fdj-xi-F9A" id="vIX-zD-no8">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2OD-GL-JpT">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2OD-GL-JpT">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="87"/>
                                                 </imageView>
                                                 <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NIJ-bg-hak" customClass="GameRateView" customModule="GameTeller" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="12" width="375" height="75"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
-                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tne-ic-x76" customClass="GameStatsView" customModule="GameTeller" customModuleProvider="target">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tne-ic-x76" customClass="GameStatsView" customModule="GameTeller" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="87"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
@@ -133,13 +133,14 @@
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableView" destination="EaR-6D-XQF" id="y9S-z7-pkN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NnC-pj-AZu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1095.5" y="1231.5"/>
+            <point key="canvasLocation" x="1091.5" y="506.5"/>
         </scene>
         <!--TestVC-->
         <scene sceneID="aWb-tT-wJT">
@@ -195,38 +196,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Id-P4-5aa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1725.5" y="506.5"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="CWO-EZ-6O2">
-            <objects>
-                <viewController id="APx-A5-x7q" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hG9-NS-6Nd"/>
-                        <viewControllerLayoutGuide type="bottom" id="jpS-hX-vVS"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="owO-1N-vDg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="RateGames" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNm-eD-h6I">
-                                <rect key="frame" x="120" y="84" width="89" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="QNm-eD-h6I" firstAttribute="top" secondItem="hG9-NS-6Nd" secondAttribute="bottom" constant="20" id="c7W-oq-EAH"/>
-                            <constraint firstItem="QNm-eD-h6I" firstAttribute="centerX" secondItem="owO-1N-vDg" secondAttribute="centerX" id="lmh-u5-DR9"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="z2G-88-Axe"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ge1-ax-mbm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1128.5" y="506.5"/>
+            <point key="canvasLocation" x="1536.5" y="506.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="to5-1f-j01">
@@ -242,7 +212,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="APx-A5-x7q" kind="relationship" relationship="rootViewController" id="rvQ-xZ-xQ4"/>
+                        <segue destination="qGZ-2T-nJr" kind="relationship" relationship="rootViewController" id="AKJ-i2-2sv"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jg8-LJ-Xmc" userLabel="First Responder" sceneMemberID="firstResponder"/>

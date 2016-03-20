@@ -10,9 +10,9 @@ import UIKit
 
 @IBDesignable class GameStatsView : UIView {
     
-    var gameTitleLabel : GTLabel?
-    var gameLikesBar : UILabel?
-    var gameDislikesBar : UILabel?
+    var gameTitleLabel : GTLabel? = GTLabel()
+    var gameLikesBar : UILabel? = UILabel()
+    var gameDislikesBar : UILabel? = UILabel()
     var likesBarWidth : NSLayoutConstraint?
     var dislikesBarWidth : NSLayoutConstraint?
     var game: Game? {
@@ -23,19 +23,32 @@ import UIKit
         
     }
     
-    
     // MARK: - Inits
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setup()
+        setupLayout()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        setup()
+        setupLayout()
+    }
+    
+    // MARK: - Update UIComponents Constraints
+    
+    override func updateConstraints() {
+        setupConstraints()
+        super.updateConstraints()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        animateBars()
+        printValues()
     }
     
     // MARK: - Inspectable Properties
@@ -77,24 +90,20 @@ import UIKit
     override func prepareForInterfaceBuilder() {
         gameTitleLabel?.text = "Test Game"
         gameLikesBar?.text = "70%"
+        gameDislikesBar?.text = "30%"
     }
     
+    // MARK: - UIComponents Design Setup
     
-    func setup() {
-        
-        // MARK: - UIComponents Design Setup
-        
-        gameTitleLabel = GTLabel()
-        gameLikesBar = UILabel()
-        gameDislikesBar = UILabel()
+    func setupLayout() {
         
         // Text
-        gameTitleLabel?.text = "Test"
+        gameTitleLabel?.text = game?.name
         gameTitleLabel?.textColor = gameTLTextColor
         
-        gameLikesBar?.text = "70%"
+        gameLikesBar?.text = ""
         gameLikesBar?.textColor = gameLBTextColor
-        gameDislikesBar?.text = "30%"
+        gameDislikesBar?.text = ""
         gameDislikesBar?.textColor = gameDBTextColor
         
         // Background
@@ -111,9 +120,11 @@ import UIKit
         gameTitleLabel?.leftInset = 5
         gameTitleLabel?.rightInset = 5
         
-        
-        // MARK: - UIComponents Constraints Setup
-        
+    }
+    
+    // MARK: - UIComponents Constraints Setup
+
+    func setupConstraints() {
         
         // Adding UIComponents to view
         
@@ -148,18 +159,6 @@ import UIKit
         
         #if !TARGET_INTERFACE_BUILDER
             
-            
-//            let likesBarWidthPercentages = self.bounds.size.width * 0.7
-//            let likesBarWidth = gameLikesBar?.widthAnchor.constraintEqualToConstant(likesBarWidthPercentages)
-//            
-//            let dislikesBarWidthPercentages = self.bounds.size.width * 0.3
-//            let dislikesBarWidth = gameDislikesBar?.widthAnchor.constraintEqualToConstant(dislikesBarWidthPercentages)
-//            
-//            print(self.bounds.size.width)
-//            print(UIScreen.mainScreen().bounds.size.width)
-//            print(likesBarWidthPercentages)
-//            print(dislikesBarWidthPercentages)
-            
             likesBarWidth = gameLikesBar?.widthAnchor.constraintEqualToConstant(0)
             dislikesBarWidth = gameDislikesBar?.widthAnchor.constraintEqualToConstant(0)
             
@@ -180,8 +179,7 @@ import UIKit
         NSLayoutConstraint.activateConstraints(allConstraints)
         
         self.layoutIfNeeded()
-        
-        
+
     }
     
     // MARK: - UIComponents Animation Functions
@@ -190,10 +188,10 @@ import UIKit
         
         // Declaring widths of bars for animation completed
         
-        let likesBarWidthPercentages = self.bounds.size.width * 0.7
+        let likesBarWidthPercentages = self.bounds.size.width * CGFloat(game!.likesPercentage / 100)
         likesBarWidth?.constant = likesBarWidthPercentages
         
-        let dislikesBarWidthPercentages = self.bounds.size.width * 0.3
+        let dislikesBarWidthPercentages = self.bounds.size.width * CGFloat(game!.dislikesPercentage / 100)
         dislikesBarWidth?.constant = dislikesBarWidthPercentages
         
         // Animating the width
@@ -205,16 +203,23 @@ import UIKit
     
     // MARK: - Printing screen sizes
     
-    func printSizes() {
+    func updateValues() {
+        gameLikesBar?.text = "\(game!.likesPercentageText)"
+        gameDislikesBar?.text = "\(game!.dislikesPercentageText)"
         
-        let likesBarWidthPercentages = self.bounds.size.width * 0.7
-        let dislikesBarWidthPercentages = self.bounds.size.width * 0.3
+    }
+    
+    func printValues() {
+        
+        let likesBarWidthPercentages = self.bounds.size.width * CGFloat(game!.likesPercentage / 100)
+        let dislikesBarWidthPercentages = self.bounds.size.width * CGFloat(game!.dislikesPercentage / 100)
         
         print("Likes: \(likesBarWidthPercentages)")
         print("Dislikes: \(dislikesBarWidthPercentages)")
         print("Frame: \(self.frame.size.width)")
         print("Bounds: \(self.bounds.size.width)")
         print("Screen: \(UIScreen.mainScreen().bounds.size.width)")
+        
     }
     
 }

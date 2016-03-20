@@ -12,10 +12,10 @@ import UIKit
     
     // MARK: - UIComponents Properties
     
-    var gameTitleLabel : GTLabel!
-    var likeButton : UIButton!
-    var skipButton : UIButton!
-    var dislikeButton : UIButton!
+    var gameTitleLabel : GTLabel! = GTLabel()
+    var likeButton : UIButton! = UIButton()
+    var skipButton : UIButton! = UIButton()
+    var dislikeButton : UIButton! = UIButton()
     var game: Game? {
         
         didSet {
@@ -38,6 +38,11 @@ import UIKit
         
         setupLayout()
         
+    }
+    
+    override func updateConstraints() {
+        setupConstraints()
+        super.updateConstraints()
     }
     
     // Interface builder defeault values for UI elements
@@ -83,16 +88,9 @@ import UIKit
         }
     }
     
-    // MARK: - Main Layout Setup Function
-
+    // MARK: - UIComponents Design Configuration
     func setupLayout() {
         
-        gameTitleLabel = GTLabel()
-        likeButton = UIButton()
-        skipButton = UIButton()
-        dislikeButton = UIButton()
-        
-        // MARK: - UIComponents Design Configuration
         // Basic UIComponents Setup - text, background, insets, color, cornerRadius, highlight
         
         // Text
@@ -133,7 +131,10 @@ import UIKit
         skipButton.setTitleColor(UIColor.blueColor(), forState: .Highlighted)
         dislikeButton.setTitleColor(UIColor.blueColor(), forState: .Highlighted)
 
-        // MARK: - UIComponents Constraints
+    }
+    
+    // MARK: - UIComponents Constraints
+    func setupConstraints() {
         
         gameTitleLabel.translatesAutoresizingMaskIntoConstraints = false
         likeButton.translatesAutoresizingMaskIntoConstraints = false
@@ -175,9 +176,8 @@ import UIKit
         let allConstraints = [topTitle!, centerXTitle!, topLike!, leftLike!, leftSkip!, rightSkip!, topSkip!, widthSkip!, topDislike!, rightDislike!, widthDislike!]
         
         // Activate all constraints
-
+        
         NSLayoutConstraint.activateConstraints(allConstraints)
-
     }
     
 }

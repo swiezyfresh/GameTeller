@@ -23,7 +23,6 @@ class TestVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let gameCell = tableView.dequeueReusableCellWithIdentifier("SingleGame") as! SingleGameCell
-        gameCell.gameStatsView.printSizes()
         return gameCell
     }
     

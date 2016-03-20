@@ -56,15 +56,12 @@ extension GameStockViewController : UITableViewDataSource, UITableViewDelegate {
         gameCell.gameRateView.game = game
         gameCell.gameStatsView.game = game
         
+        gameCell.gameStatsView.updateValues()
+        
         // Cell Layout
         gameCell.gameBGImageView.image = game.image
         
-        // Animating Cell Bars
         gameCell.layoutIfNeeded()
-        gameCell.gameStatsView.animateBars()
-        
-        //Printing Test Values
-        gameCell.gameStatsView.printSizes()
         
         return gameCell
     }
